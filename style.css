@@ -5,67 +5,52 @@
 }
 
 body {
-    background-color: #87CEEB;
+    background-color: #87ceeb;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: 'Press Start 2P', sans-serif;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .game-board {
     width: 100%;
+    max-width: 900px;
     height: 500px;
-    border-bottom: 10px solid #228B22;
+    border-bottom: 10px solid #228b22;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
+    background: linear-gradient(#87ceeb, #e0f6ff);
 }
 
 .pipe {
     position: absolute;
     bottom: 0;
     width: 80px;
+    right: -80px;
     animation: pipe-animation 2s infinite linear;
 }
 
 .mario {
-    width: 120px;
+    width: 100px;
     position: absolute;
     bottom: 0;
+    left: 50px;
 }
 
 .clouds {
     position: absolute;
-    width: 300px;
+    width: 250px;
     top: 50px;
+    right: -300px;
     animation: clouds-animation 15s infinite linear;
 }
 
 .jump {
-    animation: jump 500ms ease-out;
+    animation: jump 600ms ease-out;
 }
 
-.score {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 18px;
-    color: #fff;
-    text-shadow: 2px 2px 3px #000;
-}
-
-.game-over {
-    display: none;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 36px;
-    color: red;
-    text-shadow: 2px 2px 3px #000;
-}
-
+/* Animações */
 @keyframes pipe-animation {
     from {
         right: -80px;
@@ -82,11 +67,11 @@ body {
     }
 
     40% {
-        bottom: 180px;
+        bottom: 160px;
     }
 
     60% {
-        bottom: 180px;
+        bottom: 160px;
     }
 
     100% {
@@ -102,4 +87,26 @@ body {
     to {
         right: 100%;
     }
+}
+
+/* Pontuação e texto */
+.score {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+    color: white;
+    text-shadow: 2px 2px 3px #000;
+}
+
+.game-over {
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: red;
+    text-shadow: 2px 2px 3px #000;
+    font-weight: bold;
 }
